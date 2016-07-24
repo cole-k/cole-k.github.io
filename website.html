@@ -1,0 +1,229 @@
+<head>
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<link rel="stylesheet" type="text/css"
+      href="https://fonts.googleapis.com/css?family=Open+Sans|Quicksand">
+<meta charset="UTF-8">
+</head>
+
+<script type="text/javascript">
+String.prototype.replaceAll = function(search, replace)
+{
+	/*if replace is not sent, return original string otherwise it will
+	  replace search string with 'undefined'. */
+		if (replace === undefined)
+		{
+				return this.toString();
+		}
+
+		return this.replace(new RegExp('[' + search + ']', 'g'), replace);
+};
+
+/*
+Display code for page as background. Scrapped for now.
+
+var xhr;
+if (window.XMLHttpRequest)
+{
+		xhr = new XMLHttpRequest();
+}
+else if (window.ActiveXObject)
+{
+		xhr = new ActiveXObject("Microsoft.XMLHTTP");
+}
+
+xhr.onreadystatechange =
+	function()
+	{
+		var contents = xhr.responseText;
+		contents = contents.replaceAll("&","&amp;");
+		contents = contents.replaceAll("<","&lt");
+		contents = contents.replaceAll(">","&gt");
+		contents = contents.replaceAll("\\n","<br>");
+		contents = contents.replaceAll("\\t","&emsp;");
+		document.getElementById("code").innerHTML = contents;
+	};
+xhr.open("GET","website.html");
+xhr.send(); */
+
+var imageIndex = [0];
+function switchImage(index,direction)
+{
+  var images = [["Mountain Square.png","art_lit_square.png"]]
+  imageIndex[index] += direction; //move in direction specified
+  if(imageIndex[index] == -1)
+  {
+    imageIndex[index] = images[index].length - 1;
+  }
+  imageIndex[index] %= images[index].length;
+  document.getElementById("image"+index).src = "Images\\" + images[index][imageIndex[index]];
+}
+
+function readmore(id)
+{
+	id = "aboutmore";
+	var para = document.getElementById(id);
+	var button = document.getElementById(id + "button");
+	if(button.innerHTML == "Read more")
+	{
+		button.innerHTML = "Read less";
+		para.style = "display:inline";
+	}else
+	{
+		button.innerHTML = "Read more";
+		para.style = "display:none";
+	}
+}
+
+</script>
+
+<body>
+
+	<img src="Images\penrose cropped 1.png" class="background">
+
+	<ul class="toolbar">
+		<li><a href="website.html"><img src="Images\cole k.png" class="sig"></img></a></li>
+		<li><a href="#about" class="toolbarelement"> About </a></li>
+		<li><a href="#whatido" class="toolbarelement"> What I Do </a></li>
+		<li><a href="#contact" class="toolbarelement"> Contact </a></li>
+	</ul>
+
+	<!--
+	Part of display code as background. Scrapped for now.
+	<div class="codeBackground" id="code"></div>
+	<div class="noselect"></div>
+-->
+		<div class="contentContainer">
+			<div class="content">
+
+        <div class="container">
+  				<h1 id="about"> About </h1>
+          <img class="contentImage" src="Images\cole cropped.jpg">
+  				<p> I’m Cole, a STEM enthusiast born and raised in California. By calling myself a “STEM enthusiast,” I mean that I am a lover of most, if not all, of the Scientific, Technologic, Engineering, and Mathematic fields. While I do especially like those categories, I enjoy learning in general – I’ve always been a very curious person – and I also enjoy some non-STEM things.</p>
+        </div>
+
+        <div id="aboutmore" style="display:none">
+
+          <div class="container">
+  					<h3 class="subtitle"> Science </h3>
+  					<p> ...was an early interest of mine: at a young(er) age, I would ask all sorts of questions relating to chemistry and physics of my teachers and parents and I read a fair amount of (mostly age-appropriate) books on the subjects. Coincidentally enough, I have been formally educated in both of those subjects, but not biology (at least, at a college-level) as of yet. Its time will come. As of right now, my interest in science, though it has not waned, has been somewhat overshadowed by my interest in the TEM of STEM.</p>
+          </div>
+
+          <div class="container">
+  					<h3 class="subtitle"> Technology </h3>
+            <p> ...is one of my primary interests. I’ve been using a computer in some form since I was at the oldest 6. I both enjoy and consider myself proficient at programming. I’ve learned Java through my school and have self-taught myself a variety of languages, the most notable of which would be Python, since I know it the best. The honorary mention would go to ><>, an “esoteric” (read: “joke/unusable for actual coding”) programming language that I love.</p>
+            <div class="imageContainer">
+              <img class="contentImage" src="Images\penrose example.png">
+              <p class="caption"> The image in the background is, in fact, a product of my love for technology (and to an extent mathematics, though it didn't require as much). It is a grouping of Penrose tiles (P3 -- the third variant), two rhombuses which tile aperiodically when placed in a way that follows some rules on how they can connect to each other. I wrote the program in Processing and am in the process of adding a GUI for ease of generating these patterns. The image on the right is the same Penrose tiling as the background, gone through fewer iterations of "deflation," the process I am using to generate tilings.</p>
+            </div>
+          </div>
+
+          <div class="container">
+  					<h3 class="subtitle"> Engineering </h3>
+  					<p> ...is a field that I do not have as much experience in, though I want to be and am becoming more familiar with it. The bulk of the engineering I have done has been at the intersection of engineering and technology (e.g. working with microcontrollers) and I am most comfortable with this form of it.</p>
+          </div>
+
+          <div class="container">
+  					<h3 class="subtitle"> Mathematics </h3>
+            <p> ...is a field that I’ve been passionate about for longer than I can remember. It’s so pure, beautiful, and fascinating. I’ve been trained in various mathematics, including calculus, number theory, and (partially) differential equations, though I will be learning more advanced mathematics as I progress more throughout college. I wouldn’t really want to pick a favorite subject in math, but if I had to, I’d pick number theory. </p>
+            <div class="imageContainer">
+              <img class="contentImage" src="Images\mandelbrot square.png">
+              <p class="caption"> Mathematics seems to intersect and underly everything in STEM. Though the Mandelbrot set on the right mostly relied on my understanding of how the set is generated, its generation required the use of a programming language (in this case, Python and an imaging library). In case the trend isn't obvious, I love geometric art (especially things that have direct ties to math, like the Mandelbrot set). This particular image has been my user icon on various mediums for a few years (ever since I made it).
+            </div>
+          </div>
+
+          <h3 class="subtitle"> Other </h3>
+          <div class="container">
+              <p> ...fields that I am interested in are mostly art-related. I’ve been playing the guitar (both classical and electric) and violin since I was around the age of 6 or 7 and I love listening to music as much as I do playing it (i.e. lots). I’ve also got an interest in low-poly art as well as geometric art in general. I have made some attempts at learning a variety of applications used for art so I can compose songs (MuseScore, although I’ve attempted also to learn the art of chiptunes), 3D model (Blender), and edit images (GIMP/Photoshop). There are many other things I like, too, but I’ve already written more than enough for this section, so they will have to wait.</p>
+              <div class="imageContainer">
+                <img id="image0" class="contentImage" src="Images\Mountain Square.png">
+                <p class="caption"> One of my hobbies is making low polygon (dubbed colloquially "low poly") art using Blender. I'm still a bit of a novice (due to a combination of Blender's steep learning curve and the innate difficulty present in making art), but I've made a few pieces that I think are presentable (shown on the right). The second one ("Submit to Art and Lit") warrants some explanation. At the High School I attended, there's a magazine called "Art and Lit" and their slogan is "Submit to Art and Lit." I always joked about the alternate meaning of that phrase, imagining Art and Lit as a government force that assumed power through a military coup. I thus decided to bring my pun to life. Unfortunately and somewhat ironically, I never got around to submitting it to Art and Lit.</p>
+                <div class="arrowContainer">
+                  <input type="image" class="arrowRight" src="Images\arrow right.png" title="Advance" onClick="switchImage(0,1)"> </input>
+                  <input type="image" class="arrowLeft" src="Images\arrow left.png" title="Move back" onClick="switchImage(0,-1)"> </input>
+              </div>
+            </div>
+          </div>
+
+				</div>
+				<a class="readmore" id="aboutmorebutton" href="javascript:readmore(&quot;aboutmore&quot;)">Read more</a>
+			</div>
+		</div>
+
+		<div class="contentContainer">
+			<div class="content">
+				<h1 id="whatido"> What I Do </h1>
+
+				<div class="container">
+          <h2> <a class="contentTitle" href="https://wetdesign.com"> WET </a> </h2>
+          <h3> 2012-Present </h3>
+          <p> I’ve worked for four years (this year being my fourth) at WET, a company that manufactures and maintains fountains. At my time at WET, I’ve worked in various departments within the company and learned of how they interact with each other. I’ve spent the most time in the chemistry lab and model shop, though a close third would be the optic lab. I’ve met many interesting people and learned many interesting things through my time at WET. </p>
+        </div>
+
+        <div class="container">
+          <h2> 3D Printing </h2>
+          <h3> 2014-Present </h3>
+          <p> I worked this year for two weeks as a teacher’s assistant (TA) at my school’s form of summer school: ACE, the Academy of Creative Education. I was a TA for the 3D printing portion of the program, where students built their own 3D printers and then did various 3D printing challenges. It may surprise you to hear that the building portion was not the difficult part – it was, in fact, all of the troubleshooting and calibrating that the TAs had to do and teach that made those two weeks trying at times. Overall, it was a great experience and if I’m back in town again when ACE is going on, I’ll probably TA again. </p>
+          <p> ACE was not my first experience with 3D printing, however. In 2014, I built my own 3D printer and then acted as a TA for a similar program to ACE done through my school (this one is called immersion, and it’s two weeks taken out of the academic year for students to pursue a single activity which interests them, in my case it was teaching 3D printing). For immersion the students did the same thing as they do in ACE, except with printers that were slightly harder to build. I was a TA for the next immersion as well. </p>
+          <p> I’ve had a fair amount of experience with the subject, and though I would consider myself no master, I know enough to troubleshoot the 3D printers at WET when things go awry. </p>
+        </div>
+
+        <div class="container">
+          <h2> Music </h2>
+          <h3> 2004-Present </h3>
+          <p> Guitar was a passion of mine from the time before my first memories. My parents have a video of me strumming away on a guitar and attempting to sing when I must’ve been 3 or so years old. I started lessons in 2004 and I’ve been playing it ever since then. There was a period in around 2013 where I lost interest and stopped lessons and playing, but my interest has returned since then and I intend to continue playing. </p>
+          <p> Violin has been more the “performance instrument” of mine. Barring a stint for a few years starting in around 2007 when I was in a “rock academy,” I haven’t really performed the guitar. This is really more of a coincidence owing to the fact that I haven’t really been in any bands, though. For a while, I strongly preferred the guitar to violin (I started taking it mostly on a whim), but I’ve come to appreciate both instruments almost equally (unfortunately, the guitar has a leg up when it comes to my musical tastes, which are mostly devoid of classical music). I’ve been in various orchestras, mostly those of my schools and some honors orchestras. I still remember the first honors orchestra I was in, which had a video promoting it made that I was in for a brief period. In said video, I said something like, “I’m only in third grade but I’m in a ... [professional] orchestra!” It brought me much shame to see that shown at my school. Since then, I’ve participated in the CAIS honors orchestra on two occasions (it would’ve been four if not for schedule conflicts). </p>
+        </div>
+
+        <div class="container">
+          <h2> <a class="contentTitle" href="https://codegolf.stackexchange.com"> Code Golf </a> </h2>
+          <h3> 2015 </h3>
+          <p> Discovered by me mostly by chance, code golf is what engulfed my free time over the fall and winter periods of 2015. In brief, code golfing is when you are tasked with writing a program or function as short as possible to accomplish a specific task (e.g. calculating pi). The creativity exhibited in many of the answers and even questions is astounding, although it’s what I’d expect from a Stack Overflow site. There usually is a decent variety in the languages used for answers, but over time languages have been created by users of the site specifically with the purpose of being as short as possible. I mostly write answers in Python and ><> (the latter being an “esoteric” language I discovered through the site and fell in love with), though I don’t always share them if there are already shorter answers in the same language posted. </p>
+          <div class="imageContainer">
+            <a href="https://codegolf.stackexchange.com/users/42833/cole" class="contentImage" style="width:208; height:58">
+              <img src="http://codegolf.stackexchange.com/users/flair/42833.png" width="208" height="58" alt="profile for Cole at the Programming Puzzles and Code Golf Stack Exchange" title="profile for Cole at the Programming Puzzles and Code Golf Stack Exchange">
+            </a>
+            <p class="caption"> Click on the image to be taken to my Stack Exchance profile for PPCG (Programming Puzzles and Code Golf). Unfortunately, its size is static so it looks somewhat out of place. </p>
+          </div>
+          <p> At some point I’m going to get back into the groove, but as for now I just check on the site periodically to appreciate its brilliance. </p>
+        </div>
+
+        <div class="container">
+          <h2> Mechanical Keyboards </h2>
+          <h3> 2015-Present </h3>
+          <p> For whatever reason, mechanical keyboards captivate my interest. Let me clarify for you, these forms of keyboards are the same kind of input device as your regular keyboard, save for the fact that the switches they use to register keypresses are different. Although it may seem like a small difference, the feel of a mechanical keyboard is, in my opinion, significantly better than that of a regular one. I’ve been somewhat active on online communities for enthusiasts and I’ve recently taken strides towards building my own. </p>
+          <div class="imageContainer">
+            <iframe src="https://docs.google.com/presentation/d/1BFBNwFWqePInajlsA1_3yqQTsERY610qhb8xGlBI5bM/embed?start=false&loop=true&delayms=3000" class="contentImage" frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+            <p class="caption"> This is a presentation I did on building a mechanical keyboard. It only has a couple of pictures of the custom one I'm making, primarily because there still isn't much to see yet (I'll update this site once I finish it). </p>
+          </div>
+          <p> The keyboard I’m building is completely custom: I’ve purchased all of the parts necessary and I’m going to laser cut a case and custom manufacture the PCB. It’s been a real journey learning all that I needed to to make this (in spite of the fact that a keyboard is just a bunch of switches connected to an HID-compliant microcontroller, it still is not an easy endeavor for a complete novice to PCB design and electronics manufacturing), and while I still haven’t arrived at an end product, I am much closer than I thought I would ever be. </p>
+        </div>
+
+        <div class="container">
+          <h2> Programming </h2>
+          <h3> 2013-Present </h3>
+          <p> In 2013 I took my first programming class in which I learnt the basics of Java. It was at this point in time I realized what I had been missing. I am a logic-driven person and programming is all logic (and some Googling), so it shouldn’t come as too much of a surprise that it fascinated me. Ever since then, I’ve told people that if I had to choose a major (thankfully, I don’t have to declare one yet), it would be computer science. Since learning Java, I’ve taught myself a variety of languages to varying degrees, chief among them Python which has become my favorite. It was around the summer of 2014 when I first taught myself Python and I’ve used it over Java ever since then. There isn’t too much more to say about this topic – a lot of the things that I’ve done relating to programming are in their own separate categories. </p>
+        </div>
+
+        <div class="container">
+          <h2> Blender </h2>
+          <h3> 2014-Present </h3>
+          <p> I initially started to teach myself Blender as a means of designing parts to 3D print since I don’t feel much accomplishment building my own 3D printer and then printing stuff other people have made (it ruins the whole “DIY” feel for me). While I was teaching myself the software, I also discovered the beauty of low-polygon (low-poly) art, which is basically art made to look more simple and geometric through the use of fewer polygons (hence the name). I’ve done a fair amount of low-poly works, most of which are far too incomplete or poorly-made to share, but there are some that I am proud of. I’ve never really been the visual art sort, so it’s been interesting working with Blender, especially since it combines so many different art forms: you have to learn how to light a scene, position a camera, work with colors (I really need to take a color theory class at some point), and, of course, model 3D objects (the hardest part!). Most of the scenes I’ve made that I’m proud of are products of a little bit of watching/reading videos/articles on Blender and a lot of fumbling around (as well as some happy accidents). Though I’m familiar with a lot of controls in Blender, there are many I don’t know and even more techniques that I am lacking in. I intend to keep at it, and who knows, maybe one day it’ll come easy to me. </p>
+        </div>
+
+      </div>
+		</div>
+
+		<div class="contentContainer">
+			<div class="content">
+				<h1 id="contact" style="float:none"> Contact </h1>
+
+        <div class="container">
+				    <h2> <a class="contentTitle" style="color:black; float:none;" href="mailto:colekurashige@gmail.com"> Email me </a> </h2>
+        </div>
+
+			</div>
+		</div>
+
+
+
+</body>
