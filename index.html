@@ -45,10 +45,13 @@ xhr.onreadystatechange =
 xhr.open("GET","index.html");
 xhr.send(); */
 
-var imageIndex = [0];
+var imageIndex = [0,0,0];
 function switchImage(index,direction)
 {
-  var images = [["Mountain Square.png","art_lit_square.png"]]
+  var images =
+  [["Blender\\Mountain Square.png","Blender\\art_lit_square.png"],
+  ["ACE\\ace 1 cropped.jpg","ACE\\ace 2 cropped.jpg","ACE\\ace 3 cropped.jpg","ACE\\ace 4 cropped.jpg","ACE\\ace 5 cropped.jpg"],
+  ["Maker Faire\\maker 1 cropped.jpg","Maker Faire\\maker 2 cropped.jpg","Maker Faire\\maker 3 cropped.jpg","Maker Faire\\maker 4 cropped.jpg"]];
   imageIndex[index] += direction; //move in direction specified
   if(imageIndex[index] == -1)
   {
@@ -56,6 +59,7 @@ function switchImage(index,direction)
   }
   imageIndex[index] %= images[index].length;
   document.getElementById("image"+index).src = "Images\\" + images[index][imageIndex[index]];
+  document.getElementById("imageSubtitle"+index).innerHTML = imageIndex[index]+1;
 }
 
 function readmore(id)
@@ -135,11 +139,12 @@ function readmore(id)
           <div class="container">
               <p> ...fields that I am interested in are mostly art-related. I’ve been playing the guitar (both classical and electric) and violin since I was around the age of 6 or 7 and I love listening to music as much as I do playing it (i.e. lots). I’ve also got an interest in low-poly art as well as geometric art in general. I have made some attempts at learning a variety of applications used for art so I can compose songs (MuseScore, although I’ve attempted also to learn the art of chiptunes), 3D model (Blender), and edit images (GIMP/Photoshop). There are many other things I like, too, but I’ve already written more than enough for this section, so they will have to wait.</p>
               <div class="imageContainer">
-                <img id="image0" class="contentImage" src="Images\Mountain Square.png">
+                <img id="image0" class="contentImage" src="Images\Blender\Mountain Square.png">
                 <p class="caption"> One of my hobbies is making low polygon (dubbed colloquially "low poly") art using Blender. I'm still a bit of a novice (due to a combination of Blender's steep learning curve and the innate difficulty present in making art), but I've made a few pieces that I think are presentable (shown on the right). The second one ("Submit to Art and Lit") warrants some explanation. At the High School I attended, there's a magazine called "Art and Lit" and their slogan is "Submit to Art and Lit." I always joked about the alternate meaning of that phrase, imagining Art and Lit as a government force that assumed power through a military coup. I thus decided to bring my pun to life. Unfortunately and somewhat ironically, I never got around to submitting it to Art and Lit.</p>
                 <div class="arrowContainer">
                   <input type="image" class="arrowRight" src="Images\arrow right.png" title="Advance" onClick="switchImage(0,1)"> </input>
                   <input type="image" class="arrowLeft" src="Images\arrow left.png" title="Move back" onClick="switchImage(0,-1)"> </input>
+                  <div id="imageSubtitle0" class="imageSubtitle"> 1 </div>
               </div>
             </div>
           </div>
@@ -155,28 +160,37 @@ function readmore(id)
 
 				<div class="container">
           <h2> <a class="contentTitle" href="https://wetdesign.com"> WET </a> </h2>
-          <h3> 2012-Present </h3>
+          <h3 class="subtitle"> 2012-Present </h3>
           <p> I’ve worked for four years (this year being my fourth) at WET, a company that manufactures and maintains fountains. At my time at WET, I’ve worked in various departments within the company and learned of how they interact with each other. I’ve spent the most time in the chemistry lab and model shop, though a close third would be the optic lab. I’ve met many interesting people and learned many interesting things through my time at WET. </p>
         </div>
 
         <div class="container">
           <h2> 3D Printing </h2>
-          <h3> 2014-Present </h3>
+          <h3 class="subtitle"> 2014-Present </h3>
           <p> I worked this year for two weeks as a teacher’s assistant (TA) at my school’s form of summer school: ACE, the Academy of Creative Education. I was a TA for the 3D printing portion of the program, where students built their own 3D printers and then did various 3D printing challenges. It may surprise you to hear that the building portion was not the difficult part – it was, in fact, all of the troubleshooting and calibrating that the TAs had to do and teach that made those two weeks trying at times. Overall, it was a great experience and if I’m back in town again when ACE is going on, I’ll probably TA again. </p>
+          <div class="imageContainer">
+            <img id="image1" class="contentImage" src="Images\ACE\ace 1 cropped.jpg">
+            <p class="caption"> These are images from this year's ACE class on 3D printing. The first image is the closest you'll get to me -- that's my brother troubleshooting an unruly printer.</p>
+            <div class="arrowContainer">
+              <input type="image" class="arrowRight" src="Images\arrow right.png" title="Advance" onClick="switchImage(1,1)"> </input>
+              <input type="image" class="arrowLeft" src="Images\arrow left.png" title="Move back" onClick="switchImage(1,-1)"> </input>
+              <div id="imageSubtitle1" class="imageSubtitle"> 1 </div>
+            </div>
+          </div>
           <p> ACE was not my first experience with 3D printing, however. In 2014, I built my own 3D printer and then acted as a TA for a similar program to ACE done through my school (this one is called immersion, and it’s two weeks taken out of the academic year for students to pursue a single activity which interests them, in my case it was teaching 3D printing). For immersion the students did the same thing as they do in ACE, except with printers that were slightly harder to build. I was a TA for the next immersion as well. </p>
           <p> I’ve had a fair amount of experience with the subject, and though I would consider myself no master, I know enough to troubleshoot the 3D printers at WET when things go awry. </p>
         </div>
 
         <div class="container">
           <h2> Music </h2>
-          <h3> 2004-Present </h3>
+          <h3 class="subtitle"> 2004-Present </h3>
           <p> Guitar was a passion of mine from the time before my first memories. My parents have a video of me strumming away on a guitar and attempting to sing when I must’ve been 3 or so years old. I started lessons in 2004 and I’ve been playing it ever since then. There was a period in around 2013 where I lost interest and stopped lessons and playing, but my interest has returned since then and I intend to continue playing. </p>
           <p> Violin has been more the “performance instrument” of mine. Barring a stint for a few years starting in around 2007 when I was in a “rock academy,” I haven’t really performed the guitar. This is really more of a coincidence owing to the fact that I haven’t really been in any bands, though. For a while, I strongly preferred the guitar to violin (I started taking it mostly on a whim), but I’ve come to appreciate both instruments almost equally (unfortunately, the guitar has a leg up when it comes to my musical tastes, which are mostly devoid of classical music). I’ve been in various orchestras, mostly those of my schools and some honors orchestras. I still remember the first honors orchestra I was in, which had a video promoting it made that I was in for a brief period. In said video, I said something like, “I’m only in third grade but I’m in a ... [professional] orchestra!” It brought me much shame to see that shown at my school. Since then, I’ve participated in the CAIS honors orchestra on two occasions (it would’ve been four if not for schedule conflicts). </p>
         </div>
 
         <div class="container">
           <h2> <a class="contentTitle" href="https://codegolf.stackexchange.com"> Code Golf </a> </h2>
-          <h3> 2015 </h3>
+          <h3 class="subtitle"> 2015 </h3>
           <p> Discovered by me mostly by chance, code golf is what engulfed my free time over the fall and winter periods of 2015. In brief, code golfing is when you are tasked with writing a program or function as short as possible to accomplish a specific task (e.g. calculating pi). The creativity exhibited in many of the answers and even questions is astounding, although it’s what I’d expect from a Stack Overflow site. There usually is a decent variety in the languages used for answers, but over time languages have been created by users of the site specifically with the purpose of being as short as possible. I mostly write answers in Python and ><> (the latter being an “esoteric” language I discovered through the site and fell in love with), though I don’t always share them if there are already shorter answers in the same language posted. </p>
           <div class="imageContainer">
             <a href="https://codegolf.stackexchange.com/users/42833/cole" class="contentImage" style="width:208; height:58">
@@ -189,7 +203,7 @@ function readmore(id)
 
         <div class="container">
           <h2> Mechanical Keyboards </h2>
-          <h3> 2015-Present </h3>
+          <h3 class="subtitle"> 2015-Present </h3>
           <p> For whatever reason, mechanical keyboards captivate my interest. Let me clarify for you, these forms of keyboards are the same kind of input device as your regular keyboard, save for the fact that the switches they use to register keypresses are different. Although it may seem like a small difference, the feel of a mechanical keyboard is, in my opinion, significantly better than that of a regular one. I’ve been somewhat active on online communities for enthusiasts and I’ve recently taken strides towards building my own. </p>
           <div class="imageContainer">
             <iframe src="https://docs.google.com/presentation/d/1BFBNwFWqePInajlsA1_3yqQTsERY610qhb8xGlBI5bM/embed?start=false&loop=true&delayms=3000" class="contentImage" frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
@@ -200,17 +214,35 @@ function readmore(id)
 
         <div class="container">
           <h2> Programming </h2>
-          <h3> 2013-Present </h3>
+          <h3 class="subtitle"> 2013-Present </h3>
           <p> In 2013 I took my first programming class in which I learnt the basics of Java. It was at this point in time I realized what I had been missing. I am a logic-driven person and programming is all logic (and some Googling), so it shouldn’t come as too much of a surprise that it fascinated me. Ever since then, I’ve told people that if I had to choose a major (thankfully, I don’t have to declare one yet), it would be computer science. Since learning Java, I’ve taught myself a variety of languages to varying degrees, chief among them Python which has become my favorite. It was around the summer of 2014 when I first taught myself Python and I’ve used it over Java ever since then. There isn’t too much more to say about this topic – a lot of the things that I’ve done relating to programming are in their own separate categories. </p>
         </div>
 
         <div class="container">
           <h2> Blender </h2>
-          <h3> 2014-Present </h3>
+          <h3 class="subtitle"> 2014-Present </h3>
           <p> I initially started to teach myself Blender as a means of designing parts to 3D print since I don’t feel much accomplishment building my own 3D printer and then printing stuff other people have made (it ruins the whole “DIY” feel for me). While I was teaching myself the software, I also discovered the beauty of low-polygon (low-poly) art, which is basically art made to look more simple and geometric through the use of fewer polygons (hence the name). I’ve done a fair amount of low-poly works, most of which are far too incomplete or poorly-made to share, but there are some that I am proud of. I’ve never really been the visual art sort, so it’s been interesting working with Blender, especially since it combines so many different art forms: you have to learn how to light a scene, position a camera, work with colors (I really need to take a color theory class at some point), and, of course, model 3D objects (the hardest part!). Most of the scenes I’ve made that I’m proud of are products of a little bit of watching/reading videos/articles on Blender and a lot of fumbling around (as well as some happy accidents). Though I’m familiar with a lot of controls in Blender, there are many I don’t know and even more techniques that I am lacking in. I intend to keep at it, and who knows, maybe one day it’ll come easy to me. </p>
         </div>
 
+        <div class="container">
+          <h2> <a class="contentTitle" href="http://stories.oakwoodschool.org/2016/06/s-t-e-a-m-at-the-maker-faire/"> Maker Faire </a></h2>
+          <h3 class="subtitle"> 2016 </h3>
+          <p> I went to Maker Faire in San Mateo this year through my school and it was a blast. Our school’s booth was titled “The Playground” and it was an interactive exhibit designed to be enjoyable by people of all ages. If you click the link in the title, you can read an article written on it for my school, but if you want the gist of it, you can read on. </p>
+          <div class="imageContainer">
+            <img id="image2" class="contentImage" src="Images\Maker Faire\maker 1 cropped.jpg">
+            <p class="caption"> The first two images are of the bubble printers that were set up, the third image is of the Maker Mindset Challenge, and the fourth image is of a zipliner in action.</p>
+            <div class="arrowContainer">
+              <input type="image" class="arrowRight" src="Images\arrow right.png" title="Advance" onClick="switchImage(2,1)"> </input>
+              <input type="image" class="arrowLeft" src="Images\arrow left.png" title="Move back" onClick="switchImage(2,-1)"> </input>
+              <div id="imageSubtitle2" class="imageSubtitle"> 1 </div>
+            </div>
+          </div>
+          <p> There were three areas set up: the first was an area where you could build your own “zipliner,” a device constructed out of popsicle sticks, cardboard paper, some other assorted parts, and hot glue. You attach it to one of the lines hung up, wind it up using what we called a “wind-up gun” (a device you put on the propeller that spins it for you), and then give it a shove to make it race down the line. The fourth image shows a student helping a little girl launch a zipliner. For the most part, it was the younger folks who were attracted by this event (though I did see some adults enjoying the zipliners), and they came in droves. Cleanup at the end of the day was not fun, especially at that section. </p>
+          <p> The second area was called the “Maker Mindset Challenge.” It consisted of three challenges that were to be completed within 5 minutes each. You were only allowed to proceed to the next challenge if you completed the one you were on within that time limit. If you beat all three, your time would be recorded. The person(s) (teams were allowed) with the highest score at the end of the three day event received a 3D printer. You can see the second challenge depicted in the third image (it was basically a large version of the game Jenga with the goal being to stack up the blocks to a certain height limit). The other challenges involved assembling a giant cube out of pieces that looked like tetrimino (the blocks from Tetris) and moving a series of what we called cups (we used various objects like mason jars, PVC pipe ends, etc.) to an end. The cups challenge in particular is hard to describe without a visual aide, so I’m not going to attempt further description. </p>
+          <p> The third area was a group of foam 3D printers (featured in the first and second images). Though they didn’t get much action due to a problem relating to the hardness of the water in San Mateo, when they did function they produced quite incredible results. I’ll let the pictures speak for themselves. </p>
+          <p> Maker Faire as a whole was awesome to attend, and I’d say that I enjoyed being able to walk around and view all of the attractions more than manning the various booths for our event (as enjoyable as that was). We took home two awards as well as many ideas for the next year: Maker Faire: Best in Class and Maker Faire: Editor’s Choice. This came as a surprise to me, since it was our first time attending Maker Faire. I guess next year’s group has something to live up to. </p>
       </div>
+
 		</div>
 
 		<div class="contentContainer">

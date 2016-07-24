@@ -115,13 +115,13 @@
   clear:left;
   width: 50%;
   height: auto;
-  font-size: 18;
+  font-size: 18px;
   padding-right: 30px;
 }
 
 .readmore
 {
-  font-size: 18;
+  font-size: 18px;
 }
 
 .subtitle
@@ -129,6 +129,16 @@
   font-family: 'Open Sans', Helvetica, sans-serif;
   position: relative;
   top: 15px;
+}
+
+.imageSubtitle
+{
+  float: none;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  font-size: 18px;
+  width: 200px;
+  text-align: center;
+  margin: auto;
 }
 
 .container
@@ -181,10 +191,9 @@
   clear: none;
   font-family: 'Open Sans', Helvetica, sans-serif;
   font-size: 14px;
-  float: right;
+  float: left;
   width: 50%;
   height: 300px;
-  padding-right: 15px;
 }
 
 .contentTitle
