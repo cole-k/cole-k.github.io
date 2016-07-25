@@ -1,8 +1,12 @@
+<!DOCTYPE html>
+<html>
+
 <head>
 <link rel="stylesheet" type="text/css" href="stylesheet.css">
 <link rel="stylesheet" type="text/css"
       href="https://fonts.googleapis.com/css?family=Open+Sans|Quicksand">
 <meta charset="UTF-8">
+<title> Cole's Website </title>
 </head>
 
 <script type="text/javascript">
@@ -64,19 +68,26 @@ function switchImage(index,direction)
 
 function readmore(id)
 {
-	id = "aboutmore";
-	var para = document.getElementById(id);
+	var content = document.getElementById(id);
 	var button = document.getElementById(id + "button");
 	if(button.innerHTML == "Read more")
 	{
 		button.innerHTML = "Read less";
-		para.style = "display:inline";
+		content.style = "display:inline";
 	}else
 	{
 		button.innerHTML = "Read more";
-		para.style = "display:none";
+		content.style = "display:none";
 	}
 }
+
+document.addEventListener('DOMContentLoaded', function()
+{
+  var obfuscated_email = ["col","eku","ras","hig","e@g","mai","l.c","om"];
+  document.getElementById("email").href = "mailto:" + obfuscated_email.join("");
+}
+,false);
+
 
 </script>
 
@@ -155,6 +166,7 @@ function readmore(id)
 		</div>
 
 		<div class="contentContainer">
+
 			<div class="content">
 				<h1 id="whatido"> What I Do </h1>
 
@@ -242,15 +254,17 @@ function readmore(id)
           <p> The third area was a group of foam 3D printers (featured in the first and second images). Though they didn’t get much action due to a problem relating to the hardness of the water in San Mateo, when they did function they produced quite incredible results. I’ll let the pictures speak for themselves. </p>
           <p> Maker Faire as a whole was awesome to attend, and I’d say that I enjoyed being able to walk around and view all of the attractions more than manning the various booths for our event (as enjoyable as that was). We took home two awards as well as many ideas for the next year: Maker Faire: Best in Class and Maker Faire: Editor’s Choice. This came as a surprise to me, since it was our first time attending Maker Faire. I guess next year’s group has something to live up to. </p>
       </div>
-
 		</div>
+
+  </div>
 
 		<div class="contentContainer">
 			<div class="content">
 				<h1 id="contact" style="float:none"> Contact </h1>
 
         <div class="container">
-				    <h2> <a class="contentTitle" style="color:black; float:none;" href="mailto:colekurashige@gmail.com"> Email me </a> </h2>
+				    <h2> <a id="email" class="contentTitle" style="color:black; float:none;"> Email me </a> </h2>
+            <p> </p>
         </div>
 
 			</div>
@@ -259,3 +273,4 @@ function readmore(id)
 
 
 </body>
+</html>
