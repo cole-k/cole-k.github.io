@@ -49,13 +49,14 @@ xhr.onreadystatechange =
 xhr.open("GET","index.html");
 xhr.send(); */
 
-var imageIndex = [0,0,0];
+var imageIndex = [0,0,0,0];
 function switchImage(index,direction)
 {
   var images =
   [["Blender\\Mountain Square.png","Blender\\art_lit_square.png"],
   ["ACE\\ace 1 cropped.jpg","ACE\\ace 2 cropped.jpg","ACE\\ace 3 cropped.jpg","ACE\\ace 4 cropped.jpg","ACE\\ace 5 cropped.jpg"],
-  ["Maker-Faire\\maker 1 cropped.jpg","Maker-Faire\\maker 2 cropped.jpg","Maker-Faire\\maker 3 cropped.jpg","Maker-Faire\\maker 4 cropped.jpg"]];
+  ["Maker-Faire\\maker 1 cropped.jpg","Maker-Faire\\maker 2 cropped.jpg","Maker-Faire\\maker 3 cropped.jpg","Maker-Faire\\maker 4 cropped.jpg"],
+  ["Penrose-Tiling\\penrose tiling.png","Penrose-Tiling\\sun.png","Penrose-Tiling\\deflation.gif"]];
   imageIndex[index] += direction; //move in direction specified
   if(imageIndex[index] == -1)
   {
@@ -97,9 +98,9 @@ document.addEventListener('DOMContentLoaded', function()
 
 	<ul class="toolbar">
 		<li><a href="index.html"><img src="Images\cole k.png" class="sig"></img></a></li>
-		<li><a href="#about" class="toolbarelement"> About </a></li>
-		<li><a href="#whatido" class="toolbarelement"> What I Do </a></li>
-		<li><a href="#contact" class="toolbarelement"> Contact </a></li>
+		<li><a href="#about" class="toolbarelement" title="About me"> About </a></li>
+		<li><a href="#whatido" class="toolbarelement" title="See what I've done"> What I Do </a></li>
+		<li><a href="#contact" class="toolbarelement" title="Links to my presence elsewhere on the web"> Contact </a></li>
 	</ul>
 
 	<!--
@@ -135,7 +136,11 @@ document.addEventListener('DOMContentLoaded', function()
           <div class="container">
   					<h3 class="subtitle"> Engineering </h3>
   					<p> ...is a field that I do not have as much experience in, though I want to be and am becoming more familiar with it. The bulk of the engineering I have done has been at the intersection of engineering and technology (e.g. working with microcontrollers) and I am most comfortable with this form of it.</p>
+            <div class="imageContainer">
+              <img class="contentImage" src="Images\Maker-Faire\maker 1 cropped.jpg">
+              <p class="caption"> An image of the product of one of the "bubble printers" that my school and I set up at Maker Faire. They had some trouble with water hardeness the first two days, but when we got better water, the results were pretty great!</p>
           </div>
+        </div>
 
           <div class="container">
   					<h3 class="subtitle"> Mathematics </h3>
@@ -151,13 +156,8 @@ document.addEventListener('DOMContentLoaded', function()
               <p> ...fields that I am interested in are mostly art-related. I’ve been playing the guitar (both classical and electric) and violin since I was around the age of 6 or 7 and I love listening to music as much as I do playing it (i.e. lots). I’ve also got an interest in low-poly art as well as geometric art in general. I have made some attempts at learning a variety of applications used for art so I can compose songs (MuseScore, although I’ve attempted also to learn the art of chiptunes), 3D model (Blender), and edit images (GIMP/Photoshop). There are many other things I like, too, but I’ve already written more than enough for this section, so they will have to wait.</p>
               <div class="imageContainer">
                 <img id="image0" class="contentImage" src="Images\Blender\Mountain Square.png">
-                <p class="caption"> One of my hobbies is making low polygon (dubbed colloquially "low poly") art using Blender. I'm still a bit of a novice (due to a combination of Blender's steep learning curve and the innate difficulty present in making art), but I've made a few pieces that I think are presentable (shown on the right). The second one ("Submit to Art and Lit") warrants some explanation. At the High School I attended, there's a magazine called "Art and Lit" and their slogan is "Submit to Art and Lit." I always joked about the alternate meaning of that phrase, imagining Art and Lit as a government force that assumed power through a military coup. I thus decided to bring my pun to life. Unfortunately and somewhat ironically, I never got around to submitting it to Art and Lit.</p>
-                <div class="arrowContainer">
-                  <input type="image" class="arrowRight" src="Images\arrow right.png" title="Advance" onClick="switchImage(0,1)"> </input>
-                  <input type="image" class="arrowLeft" src="Images\arrow left.png" title="Move back" onClick="switchImage(0,-1)"> </input>
-                  <div id="imageSubtitle0" class="imageSubtitle"> 1 </div>
+                <p class="caption"> A simple low-poly (low polygon) work of mine created in Blender that I use for my phone's background. Despite its simplicity, I had to fumble with camera angle, lighting, and colors far too much to get a nice-looking end product. </p>
               </div>
-            </div>
           </div>
 
 				</div>
@@ -194,6 +194,43 @@ document.addEventListener('DOMContentLoaded', function()
         </div>
 
         <div class="container">
+          <h2> <a class="contentTitle" href="http://stories.oakwoodschool.org/2016/06/s-t-e-a-m-at-the-maker-faire/"> Maker Faire </a></h2>
+          <h3 class="subtitle"> 2016 </h3>
+          <p> I went to Maker Faire in San Mateo this year through my school and it was a blast. Our school’s booth was titled “The Playground” and it was an interactive exhibit designed to be enjoyable by people of all ages. If you click the link in the title, you can read an article written on it for my school, but if you want the gist of it, you can read on. </p>
+          <div class="imageContainer">
+            <img id="image2" class="contentImage" src="Images\Maker-Faire\maker 1 cropped.jpg">
+            <p class="caption"> The first two images are of the bubble printers that were set up, the third image is of the Maker Mindset Challenge, and the fourth image is of a zipliner in action.</p>
+            <div class="arrowContainer">
+              <input type="image" class="arrowRight" src="Images\arrow right.png" title="Advance" onClick="switchImage(2,1)"> </input>
+              <input type="image" class="arrowLeft" src="Images\arrow left.png" title="Move back" onClick="switchImage(2,-1)"> </input>
+              <div id="imageSubtitle2" class="imageSubtitle"> 1 </div>
+            </div>
+          </div>
+          <p> There were three areas set up: the first was an area where you could build your own “zipliner,” a device constructed out of popsicle sticks, cardboard paper, some other assorted parts, and hot glue. You attach it to one of the lines hung up, wind it up using what we called a “wind-up gun” (a device you put on the propeller that spins it for you), and then give it a shove to make it race down the line. The fourth image shows a student helping a little girl launch a zipliner. For the most part, it was the younger folks who were attracted by this event (though I did see some adults enjoying the zipliners), and they came in droves. Cleanup at the end of the day was not fun, especially at that section. </p>
+          <p> The second area was called the “Maker Mindset Challenge.” It consisted of three challenges that were to be completed within 5 minutes each. You were only allowed to proceed to the next challenge if you completed the one you were on within that time limit. If you beat all three, your time would be recorded. The person(s) (teams were allowed) with the highest score at the end of the three day event received a 3D printer. You can see the second challenge depicted in the third image (it was basically a large version of the game Jenga with the goal being to stack up the blocks to a certain height limit). The other challenges involved assembling a giant cube out of pieces that looked like tetrimino (the blocks from Tetris) and moving a series of what we called cups (we used various objects like mason jars, PVC pipe ends, etc.) to an end. The cups challenge in particular is hard to describe without a visual aide, so I’m not going to attempt further description. </p>
+          <p> The third area was a group of foam 3D printers (featured in the first and second images). Though they didn’t get much action due to a problem relating to the hardness of the water in San Mateo, when they did function they produced quite incredible results. I’ll let the pictures speak for themselves. </p>
+          <p> Maker Faire as a whole was awesome to attend, and I’d say that I enjoyed being able to walk around and view all of the attractions more than manning the various booths for our event (as enjoyable as that was). We took home two awards as well as many ideas for the next year: Maker Faire: Best in Class and Maker Faire: Editor’s Choice. This came as a surprise to me, since it was our first time attending Maker Faire. I guess next year’s group has something to live up to. </p>
+      </div>
+
+        <div class="container">
+          <h2> <a class="contentTitle" href="https://github.com/cole-k/Penrose-Tiling"> Penrose Tiling </a> </h2>
+          <h3 class="subtitle"> 2016 </h3>
+          <p> In my Number Theory class for the year 2015-2016, we read a book called <i>Fermat’s Enigma</i> by Simon Singh. It’s a great book that covers Andrew Wiles’s proof of Fermat’s Last Theorem and the theorem in general without going too deep into the actual proof (the entire book is about the length of Wiles’s proof, to give a little context). It goes on mathematical tangents (pun intended) usually discussing mathematicians or areas of math related to part of the proof or the history of the proof. One of these tangents covered Penrose tiles, a series of tiles created by Roger Penrose (you may know him from his paradoxical shape, the Penrose triangle) designed to tile aperiodically. After looking at a few images, I fell in love. </p>
+          <div class="imageContainer">
+            <img id="image3" class="contentImage" src="Images\Penrose-Tiling\penrose tiling.png">
+            <p class="caption"> The first and second images are examples of Penrose tiling (so, coincidentally, is the background to this website). The third image (not really an image) shows how deflation works. Each pass through, the number of triangles increases by about a factor of the golden ratio.</p>
+            <div class="arrowContainer">
+              <input type="image" class="arrowRight" src="Images\arrow right.png" title="Advance" onClick="switchImage(3,1)"> </input>
+              <input type="image" class="arrowLeft" src="Images\arrow left.png" title="Move back" onClick="switchImage(3,-1)"> </input>
+              <div id="imageSubtitle3" class="imageSubtitle"> 1 </div>
+            </div>
+          </div>
+          <p> In case it hasn’t become clear to you already, I love geometric art. Bonus points to art that is generated purely mathematically (think things like the Mandelbrot set). It’s no surprise that I knew I had to generate Penrose tiles through some sort of program. Unfortunately, it would take me almost 6 months to finally get to writing said program. Its creation was actually prompted by the design of this website, which I thought Penrose tilings would be a perfect background for. You can be the judge of whether or not I was right: I love it, though. </p>
+          <p> The tiles that I’m using are the P3 tiles: two rhombuses, one skinny (angles of 36 and 144) and one fat (angles of 108 and 72). They tile in certain specific ways so that they don’t form parallelograms and other periodic shapes (basically, certain sides of each rhombus have to match up with certain other sides of the same or other kind). The way I generate Penrose tiles is through a process called deflation. You can see an example of this in the third image on the right. You start with a Robinson triangle (or more than one, if you can arrange them appropriately), which is a special kind of triangle that also happens to be half of both kinds of our rhombuses (there are two types of Robinson triangles as well, skinny and fat). You then place a point one side for the skinny Robinson triangle such that the two line segments it creates on the side are in a ratio that equals the golden ratio. Then you connect this point with two vertices such that you form more skinny and fat Robinson triangles within the original triangle (this is starting to look a lot like a fractal). You do the same thing with two points on the fat Robinson triangle, connecting them with various vertices to form more Robinson triangles. Do this enough times and you end up with a Penrose tiling. </p>
+          <p> If you want to read more about it, <a href="http://preshing.com/20110831/penrose-tiling-explained/">this blog</a> does a much better job than I do of explaining the intricacies of Penrose tiling. It’s also where I learned the algorithm for deflation. There are other sources on the blog page, one of which is the Wikipedia entry, which isn’t half-bad. </p>
+      </div>
+
+        <div class="container">
           <h2> Music </h2>
           <h3 class="subtitle"> 2004-Present </h3>
           <p> Guitar was a passion of mine from the time before my first memories. My parents have a video of me strumming away on a guitar and attempting to sing when I must’ve been 3 or so years old. I started lessons in 2004 and I’ve been playing it ever since then. There was a period in around 2013 where I lost interest and stopped lessons and playing, but my interest has returned since then and I intend to continue playing. </p>
@@ -205,8 +242,8 @@ document.addEventListener('DOMContentLoaded', function()
           <h3 class="subtitle"> 2015 </h3>
           <p> Discovered by me mostly by chance, code golf is what engulfed my free time over the fall and winter periods of 2015. In brief, code golfing is when you are tasked with writing a program or function as short as possible to accomplish a specific task (e.g. calculating pi). The creativity exhibited in many of the answers and even questions is astounding, although it’s what I’d expect from a Stack Overflow site. There usually is a decent variety in the languages used for answers, but over time languages have been created by users of the site specifically with the purpose of being as short as possible. I mostly write answers in Python and ><> (the latter being an “esoteric” language I discovered through the site and fell in love with), though I don’t always share them if there are already shorter answers in the same language posted. </p>
           <div class="imageContainer">
-            <a href="https://codegolf.stackexchange.com/users/42833/cole" class="contentImage" style="width:208; height:58">
-              <img src="http://codegolf.stackexchange.com/users/flair/42833.png" width="208" height="58" alt="profile for Cole at the Programming Puzzles and Code Golf Stack Exchange" title="profile for Cole at the Programming Puzzles and Code Golf Stack Exchange">
+            <a href="https://codegolf.stackexchange.com/users/42833/cole" class="contentImage" style="width:208px; height:58px;">
+              <img src="http://codegolf.stackexchange.com/users/flair/42833.png" style="width:208px; height:58px;" alt="profile for Cole at the Programming Puzzles and Code Golf Stack Exchange" title="profile for Cole at the Programming Puzzles and Code Golf Stack Exchange">
             </a>
             <p class="caption"> Click on the image to be taken to my Stack Exchance profile for PPCG (Programming Puzzles and Code Golf). Unfortunately, its size is static so it looks somewhat out of place. </p>
           </div>
@@ -234,29 +271,19 @@ document.addEventListener('DOMContentLoaded', function()
           <h2> Blender </h2>
           <h3 class="subtitle"> 2014-Present </h3>
           <p> I initially started to teach myself Blender as a means of designing parts to 3D print since I don’t feel much accomplishment building my own 3D printer and then printing stuff other people have made (it ruins the whole “DIY” feel for me). While I was teaching myself the software, I also discovered the beauty of low-polygon (low-poly) art, which is basically art made to look more simple and geometric through the use of fewer polygons (hence the name). I’ve done a fair amount of low-poly works, most of which are far too incomplete or poorly-made to share, but there are some that I am proud of. I’ve never really been the visual art sort, so it’s been interesting working with Blender, especially since it combines so many different art forms: you have to learn how to light a scene, position a camera, work with colors (I really need to take a color theory class at some point), and, of course, model 3D objects (the hardest part!). Most of the scenes I’ve made that I’m proud of are products of a little bit of watching/reading videos/articles on Blender and a lot of fumbling around (as well as some happy accidents). Though I’m familiar with a lot of controls in Blender, there are many I don’t know and even more techniques that I am lacking in. I intend to keep at it, and who knows, maybe one day it’ll come easy to me. </p>
-        </div>
-
-        <div class="container">
-          <h2> <a class="contentTitle" href="http://stories.oakwoodschool.org/2016/06/s-t-e-a-m-at-the-maker-faire/"> Maker Faire </a></h2>
-          <h3 class="subtitle"> 2016 </h3>
-          <p> I went to Maker Faire in San Mateo this year through my school and it was a blast. Our school’s booth was titled “The Playground” and it was an interactive exhibit designed to be enjoyable by people of all ages. If you click the link in the title, you can read an article written on it for my school, but if you want the gist of it, you can read on. </p>
           <div class="imageContainer">
-            <img id="image2" class="contentImage" src="Images\Maker-Faire\maker 1 cropped.jpg">
-            <p class="caption"> The first two images are of the bubble printers that were set up, the third image is of the Maker Mindset Challenge, and the fourth image is of a zipliner in action.</p>
+            <img id="image0" class="contentImage" src="Images\Blender\Mountain Square.png">
+            <p class="caption"> One of my hobbies is making low polygon (dubbed colloquially "low-poly") art using Blender. Even though I'm still mostly a novice, I feel like I've made a few pieces that I think are presentable (shown on the right). The second one ("Submit to Art and Lit") warrants some explanation. At the High School I attended, there's a magazine called "Art and Lit" and their slogan is "Submit to Art and Lit." I always joked about the alternate meaning of that phrase, imagining Art and Lit as a government force that assumed power through a military coup. I thus decided to bring my pun to life. Unfortunately and somewhat ironically, I never got around to submitting it to Art and Lit.</p>
             <div class="arrowContainer">
-              <input type="image" class="arrowRight" src="Images\arrow right.png" title="Advance" onClick="switchImage(2,1)"> </input>
-              <input type="image" class="arrowLeft" src="Images\arrow left.png" title="Move back" onClick="switchImage(2,-1)"> </input>
-              <div id="imageSubtitle2" class="imageSubtitle"> 1 </div>
-            </div>
+              <input type="image" class="arrowRight" src="Images\arrow right.png" title="Advance" onClick="switchImage(0,1)"> </input>
+              <input type="image" class="arrowLeft" src="Images\arrow left.png" title="Move back" onClick="switchImage(0,-1)"> </input>
+              <div id="imageSubtitle0" class="imageSubtitle"> 1 </div>
           </div>
-          <p> There were three areas set up: the first was an area where you could build your own “zipliner,” a device constructed out of popsicle sticks, cardboard paper, some other assorted parts, and hot glue. You attach it to one of the lines hung up, wind it up using what we called a “wind-up gun” (a device you put on the propeller that spins it for you), and then give it a shove to make it race down the line. The fourth image shows a student helping a little girl launch a zipliner. For the most part, it was the younger folks who were attracted by this event (though I did see some adults enjoying the zipliners), and they came in droves. Cleanup at the end of the day was not fun, especially at that section. </p>
-          <p> The second area was called the “Maker Mindset Challenge.” It consisted of three challenges that were to be completed within 5 minutes each. You were only allowed to proceed to the next challenge if you completed the one you were on within that time limit. If you beat all three, your time would be recorded. The person(s) (teams were allowed) with the highest score at the end of the three day event received a 3D printer. You can see the second challenge depicted in the third image (it was basically a large version of the game Jenga with the goal being to stack up the blocks to a certain height limit). The other challenges involved assembling a giant cube out of pieces that looked like tetrimino (the blocks from Tetris) and moving a series of what we called cups (we used various objects like mason jars, PVC pipe ends, etc.) to an end. The cups challenge in particular is hard to describe without a visual aide, so I’m not going to attempt further description. </p>
-          <p> The third area was a group of foam 3D printers (featured in the first and second images). Though they didn’t get much action due to a problem relating to the hardness of the water in San Mateo, when they did function they produced quite incredible results. I’ll let the pictures speak for themselves. </p>
-          <p> Maker Faire as a whole was awesome to attend, and I’d say that I enjoyed being able to walk around and view all of the attractions more than manning the various booths for our event (as enjoyable as that was). We took home two awards as well as many ideas for the next year: Maker Faire: Best in Class and Maker Faire: Editor’s Choice. This came as a surprise to me, since it was our first time attending Maker Faire. I guess next year’s group has something to live up to. </p>
+        </div>
       </div>
-		</div>
 
   </div>
+</div>
 
 		<div class="contentContainer">
 			<div class="content">
@@ -264,7 +291,8 @@ document.addEventListener('DOMContentLoaded', function()
 
         <div class="container">
 				    <h2> <a id="email" class="contentTitle" style="color:black; float:none;"> Email me </a> </h2>
-            <p> </p>
+            <h2> <a class="contentTitle" href="https://github.com/cole-k" style="color:black; float:none;"> Github </a> </h2>
+            <h2> <a class="contentTitle" href="https://stackexchange.com/users/6736517/cole" style="color:black; float:none;"> Stack Exchange </a> </h2>
         </div>
 
 			</div>
